@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium_version>LATEST</selenium_version>
         <testNgVersion>LATEST</testNgVersion>
+        <ownerVersion>1.0.12</ownerVersion>
     </properties>
 
     <dependencies>
@@ -27,6 +28,10 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium_version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${ownerVersion}</version>
+        </dependency>
     </dependencies>
-
 </project>
