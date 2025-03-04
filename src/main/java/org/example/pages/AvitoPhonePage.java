@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -23,22 +24,22 @@ public class AvitoPhonePage extends BasePage {
         this.elements = new AvitoPhoneElements();
     }
 
+    @Step("Заполнить поле поиск значением '{0}'")
     public void fillInput(String input) {
         WebElement inputElement = wait.until(visibilityOfElementLocated(elements.getInput()));
         inputElement.click();
         inputElement.sendKeys(input);
     }
 
+    @Step("Нажать кнопку поиск")
     public void clickSearchButton() {
         driver.findElement(elements.getButtonSearch()).click();
     }
 
-    @Step("Проверить наличие товаров")
+    @Step("Проверить наличие списка товаров")
     public void checkProductCards() {
         List<WebElement> productCards = driver.findElements(elements.getProductCards());
         wait.until(visibilityOfAllElements(productCards));
-        if (!productCards.isEmpty()) {
-            System.out.println("Товары присутствуют");
-        }
+        assertThat("Список товаров пустой", !productCards.isEmpty());
     }
 }

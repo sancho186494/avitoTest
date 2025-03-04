@@ -26,7 +26,7 @@ public class AvitoTest {
         basePage.openBasePage();
     }
 
-    @Test
+    @Test(description = "Авито тест")
     public void test() {
         avitoHomePage.clickElectronicButton();
         avitoElectronicPage.checkCardsVisibility();

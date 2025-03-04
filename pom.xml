@@ -9,14 +9,16 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium_version>LATEST</selenium_version>
         <testNgVersion>LATEST</testNgVersion>
         <ownerVersion>1.0.12</ownerVersion>
         <allure.version>2.20.1</allure.version>
-        <aspectj.version>1.9.7</aspectj.version>
+        <aspectj.version>1.9.22.1</aspectj.version>
+        <lombokVersion>1.18.36</lombokVersion>
+        <hamcrestVersion>3.0</hamcrestVersion>
     </properties>
 
     <dependencies>
@@ -49,6 +51,17 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombokVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrestVersion}</version>
         </dependency>
     </dependencies>
 

@@ -3,7 +3,6 @@ package org.example.pages;
 import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
 import org.example.ProjectConfig;
-import org.example.WebDriverProvider;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -19,11 +18,16 @@ public class BasePage {
         this.actions = new Actions(driver);
     }
 
-    @Step("Открыть стартовую страницу 'avito.ru'")
     public void openBasePage() {
-        driver.get(config.baseUrl());
+        openUrl(config.baseUrl());
     }
 
+    @Step("Открыть страницу '{0}'")
+    public void openUrl(String url) {
+        driver.get(url);
+    }
+
+    @Step("Закрыть браузер")
     public void closeWebDriver() {
         driver.quit();
     }

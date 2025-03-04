@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.example.elements.AvitoElectronicElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +20,7 @@ public class AvitoElectronicPage extends BasePage {
         this.elements = new AvitoElectronicElements();
     }
 
+    @Step("Проверить видимость карточек 'Телефоны', 'Бытовая техника', 'Ноутбуки'")
     public void checkCardsVisibility() {
         wait.until(visibilityOfAllElements(
                 driver.findElement(elements.getPhoneButton()),
@@ -27,6 +29,7 @@ public class AvitoElectronicPage extends BasePage {
         ));
     }
 
+    @Step("Нажать карточку 'Телефоны'")
     public void clickPhonesCard() {
         actions.moveToElement(driver.findElement(elements.getPhoneButton())).click().perform();
     }

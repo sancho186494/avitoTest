@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.example.elements.AvitoHomeElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ public class AvitoHomePage extends BasePage {
         this.elements = new AvitoHomeElements();
     }
 
+    @Step("Нажать кнопку 'Электроника'")
     public void clickElectronicButton() {
         driver.findElement(elements.getElectronicButton()).click();
     }
