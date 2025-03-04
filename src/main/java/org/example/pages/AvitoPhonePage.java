@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.example.elements.AvitoPhoneElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +33,7 @@ public class AvitoPhonePage extends BasePage {
         driver.findElement(elements.getButtonSearch()).click();
     }
 
+    @Step("Проверить наличие товаров")
     public void checkProductCards() {
         List<WebElement> productCards = driver.findElements(elements.getProductCards());
         wait.until(visibilityOfAllElements(productCards));

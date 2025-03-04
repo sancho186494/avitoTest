@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
 import org.example.ProjectConfig;
 import org.example.WebDriverProvider;
@@ -18,6 +19,7 @@ public class BasePage {
         this.actions = new Actions(driver);
     }
 
+    @Step("Открыть стартовую страницу 'avito.ru'")
     public void openBasePage() {
         driver.get(config.baseUrl());
     }
