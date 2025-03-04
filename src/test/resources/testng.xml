@@ -4,7 +4,7 @@
 <suite name="All Test Suite">
     <test verbose="2" name="Avito tests">
         <classes>
-            <class name="org.example.Test1">
+            <class name="org.example.AvitoTest">
                 <methods>
                     <exclude name="test2"/>
                 </methods>
